@@ -44,7 +44,7 @@ function doPost(e) {
     const sheet = getSheet();
 
     // 3) Ignore duplicate submissions of the same Razorpay payment
-    if (data.paymentId) {
+    if (data.paymentId && String(data.paymentId).startsWith("pay_")) {
       const ids = sheet.getRange(2, 10, Math.max(sheet.getLastRow() - 1, 1), 1).getValues().flat();
       if (ids.indexOf(data.paymentId) !== -1) {
         return json({ ok: true, duplicate: true });

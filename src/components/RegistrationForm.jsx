@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { CONFIG } from "../config";
 import { saveToSheet } from "../utils/api";
-import { buildWhatsAppMessage, openWhatsApp } from "../utils/whatsapp";
-import { Smartphone, Banknote, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { buildWhatsAppMessage, openWhatsApp, getWhatsAppUrl } from "../utils/whatsapp";
+import {
+  Smartphone,
+  Banknote,
+  ShieldCheck,
+  CheckCircle2,
+  Loader2,
+  AlertCircle,
+  ExternalLink,
+} from "lucide-react";
 
 const EMPTY = { name: "", phone: "", gender: "", age: "", place: "" };
 
@@ -67,49 +75,76 @@ export default function RegistrationForm({ mode = "public", pin = "" }) {
     const isUPI = paymentMethod === "upi";
     setBusy(true);
 
+    // 1) Show Loading status immediately while processing
+    setNotice({
+      type: "loading",
+      text: "രജിസ്ട്രേഷൻ വിവരങ്ങൾ ഷീറ്റിലേക്ക് രേഖപ്പെടുത്തുന്നു... ദയവായി കാത്തിരിക്കുക (Saving registration details... Please wait)",
+    });
+
     try {
-      // 1) Prepare sheet payload (Bypasses payment gateway directly)
       const kind = isUPI
         ? isTeam ? "team-upi" : "public-upi"
         : isTeam ? "team-cash" : "public-cash";
+
+      // Unique reference ID for each registration to prevent any duplicate detection blockage
+      const uniquePaymentId = `${isUPI ? "UPI" : "CASH"}_${Date.now()}_${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
 
       const payload = {
         ...clean,
         paymentMode: isUPI ? "Direct UPI / GPay" : "Pay Cash Directly",
         status: isUPI ? "Direct UPI Transfer" : "Paid Cash Directly",
-        paymentId: isUPI ? "UPI_7736844171" : "CASH_DIRECT",
+        paymentId: uniquePaymentId,
         source: isTeam ? "Ground Team" : "Public Website",
         pin: isTeam ? pin : "",
         amount: CONFIG.FEE_RUPEES,
       };
 
-      // 2) Save to Google Sheet
+      // 2) AWAIT the Google Sheet fetch request
+      await saveToSheet(payload);
+
+      // Save a local backup in browser for safety
       try {
-        await saveToSheet(payload);
-      } catch (saveErr) {
-        // Keep local backup in browser so registration is never lost
-        const backup = JSON.parse(localStorage.getItem("amqa_unsaved") || "[]");
+        const backup = JSON.parse(localStorage.getItem("amqa_registrations") || "[]");
         backup.push({ ...payload, at: new Date().toISOString() });
-        localStorage.setItem("amqa_unsaved", JSON.stringify(backup));
-        console.error("Sheet save failed:", saveErr);
+        localStorage.setItem("amqa_registrations", JSON.stringify(backup));
+      } catch (backupErr) {
+        console.warn("Local backup failed:", backupErr);
       }
 
-      // 3) Open WhatsApp with confirmation
-      setNotice({
-        type: "info",
-        text: "Registration submitted successfully! Opening WhatsApp…",
-      });
-
+      // 3) ONLY trigger WhatsApp redirect AFTER the Google Sheet submission successfully completes!
       const whatsappMsg = buildWhatsAppMessage({
         form: clean,
         paymentMethod,
         kind,
         source: isTeam ? "Ground Team" : "Public Website",
       });
+      const whatsappUrl = getWhatsAppUrl(whatsappMsg);
 
-      openWhatsApp(whatsappMsg);
+      setNotice({
+        type: "success",
+        text: "രജിസ്ട്രേഷൻ വിജയകരമായി രേഖപ്പെടുത്തി! വാട്സ്ആപ്പിലേക്ക് റീഡയറക്ട് ചെയ്യുന്നു... (Saved successfully! Redirecting to WhatsApp...)",
+        whatsappUrl,
+      });
+
+      // Brief delay to ensure network finishes flushing and user sees success state
+      setTimeout(() => {
+        openWhatsApp(whatsappMsg);
+      }, 1200);
     } catch (err) {
-      setNotice({ type: "error", text: err.message || "An unexpected error occurred." });
+      console.error("Google Sheet submission failed:", err);
+      // Keep local backup so user data is preserved
+      try {
+        const backup = JSON.parse(localStorage.getItem("amqa_unsaved") || "[]");
+        backup.push({ ...clean, paymentMethod, at: new Date().toISOString() });
+        localStorage.setItem("amqa_unsaved", JSON.stringify(backup));
+      } catch (backupErr) {
+        console.warn("Local unsaved backup failed:", backupErr);
+      }
+
+      setNotice({
+        type: "error",
+        text: "രജിസ്ട്രേഷൻ വിവരങ്ങൾ സേവ് ചെയ്യാൻ സാധിച്ചില്ല. ദയവായി ഇന്റർനെറ്റ് കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക. (Failed to save data. Please try again.)",
+      });
       setBusy(false);
     }
   }
@@ -313,23 +348,54 @@ export default function RegistrationForm({ mode = "public", pin = "" }) {
       {notice && (
         <div
           role="status"
-          className={`rounded-xl p-4 text-sm font-medium ${
+          className={`rounded-xl p-4 text-sm font-medium transition-all ${
             notice.type === "error"
-              ? "bg-red-50 text-red-800 border border-red-200"
-              : "bg-emerald-50 text-emerald-900 border border-emerald-200"
+              ? "bg-red-50 text-red-900 border border-red-200"
+              : notice.type === "loading"
+              ? "bg-amber-50 text-amber-900 border border-amber-300"
+              : "bg-emerald-50 text-emerald-950 border border-emerald-300"
           }`}
         >
-          {notice.text}
+          <div className="flex items-start gap-2.5">
+            {notice.type === "loading" && (
+              <Loader2 className="h-5 w-5 animate-spin text-amber-700 shrink-0 mt-0.5" />
+            )}
+            {notice.type === "error" && (
+              <AlertCircle className="h-5 w-5 text-red-700 shrink-0 mt-0.5" />
+            )}
+            {notice.type === "success" && (
+              <CheckCircle2 className="h-5 w-5 text-emerald-700 shrink-0 mt-0.5" />
+            )}
+            <div className="space-y-1">
+              <p className="leading-relaxed">{notice.text}</p>
+              {notice.whatsappUrl && (
+                <a
+                  href={notice.whatsappUrl}
+                  className="mt-2 inline-flex items-center gap-1.5 font-bold text-emerald-900 underline underline-offset-4 hover:text-emerald-700"
+                >
+                  <span>വാട്സ്ആപ്പ് തുറക്കാൻ ഇവിടെ അമർത്തുക (Click to open WhatsApp)</span>
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
       <button
         type="submit"
         disabled={busy}
-        className="group relative w-full overflow-hidden rounded-xl bg-emerald-900 px-6 py-4 text-base sm:text-lg font-bold text-gold-300 shadow-xl shadow-emerald-900/25 transition-all duration-300 hover:bg-emerald-800 hover:shadow-emerald-900/40 disabled:cursor-not-allowed disabled:opacity-60 active:scale-[0.99]"
+        className="group relative w-full overflow-hidden rounded-xl bg-emerald-900 px-6 py-4 text-base sm:text-lg font-bold text-gold-300 shadow-xl shadow-emerald-900/25 transition-all duration-300 hover:bg-emerald-800 hover:shadow-emerald-900/40 disabled:cursor-not-allowed disabled:opacity-75 active:scale-[0.99]"
       >
         <span className="flex items-center justify-center gap-2">
-          {busy ? "Submitting registration…" : `Submit Registration — ₹${CONFIG.FEE_RUPEES}`}
+          {busy ? (
+            <>
+              <Loader2 className="h-5 w-5 animate-spin text-gold-300" />
+              <span>സമർപ്പിക്കുന്നു... ദയവായി കാത്തിരിക്കുക (Saving...)</span>
+            </>
+          ) : (
+            `Submit Registration — ₹${CONFIG.FEE_RUPEES}`
+          )}
         </span>
       </button>
 

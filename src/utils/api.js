@@ -10,13 +10,14 @@ import { CONFIG } from "../config";
  */
 export async function saveToSheet(payload) {
   if (!CONFIG.APPS_SCRIPT_URL || CONFIG.APPS_SCRIPT_URL.startsWith("PASTE_")) {
-    throw new Error("APPS_SCRIPT_URL is not set in src/config.js");
+    throw new Error("APPS_SCRIPT_URL is not configured in src/config.js");
   }
 
-  await fetch(CONFIG.APPS_SCRIPT_URL, {
+  return await fetch(CONFIG.APPS_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(payload),
+    keepalive: true,
   });
 }
