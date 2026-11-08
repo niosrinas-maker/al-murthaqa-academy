@@ -10,7 +10,7 @@ export const CONFIG = {
 
   // Google Apps Script Web App URL (ends with /exec) - see README for how to get it
   APPS_SCRIPT_URL:
-    "https://script.google.com/macros/s/AKfycbzJIe8Go8Dgdnpc-BMcHcwdgzW4thLSPReXusVipDAw6w9ntFVvJViR7B2QR1-lCjVwLw/exec",
+    "https://script.google.com/macros/s/AKfycbwMXDVBiOm9P2knIguuPDfV1hjrZmGnxKQ6ETnMe_aBnxF1JOXF9dwSr3d7Vw6f7SOIsQ/exec",
 
   // Admin WhatsApp number: 10 digits only, WITHOUT +91 (the code adds 91)
   ADMIN_PHONE: "7736844171",
