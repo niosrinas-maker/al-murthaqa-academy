@@ -57,8 +57,11 @@ export default function Hero() {
           <p className="mt-3 text-sm font-medium text-gold-300/90 sm:text-base">
             ശുദ്ധമായ പാരായണത്തിലേക്ക്, ക്രമബദ്ധമായ പഠനത്തിലൂടെ
           </p>
+          <p className="mt-2 text-sm text-gold-200/95 sm:text-base font-medium">
+            ഫാത്തിഹയുടെയും ചെറിയ സൂറത്തുകളുടെയും അർത്ഥം മനസ്സിലാക്കി, പൂർണ്ണ തഹ്ഖീഖോടെയുള്ള പാരായണ പഠനം.
+          </p>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-emerald-100/90">
-            A One-Year Quran Recitation &amp; Correction Programme. Recorded Classes. Personal Mentor Correction.
+            A 2-Month Quran Recitation &amp; Meaning Programme. Recorded Classes. Dedicated Mentoring.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
@@ -67,7 +70,7 @@ export default function Hero() {
             >
               Register Now - ₹{CONFIG.FEE_RUPEES}
             </a>
-            <span className="text-sm text-emerald-100/70">Language: Malayalam · 1 year</span>
+            <span className="text-sm text-emerald-100/70">Language: Malayalam · 2 Months (2 മാസം)</span>
           </div>
         </div>
         <MihrabArch />

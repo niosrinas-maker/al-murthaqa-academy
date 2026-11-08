@@ -25,7 +25,8 @@ export function buildWhatsAppMessage({
 • Gender: ${form.gender}
 • Age: ${form.age}
 • Place: ${form.place}
-• Programme: Quran Tilawah Programme
+• Programme: Quran Tilawah Programme (2 Months)
+• Focus: Surah Al-Fatihah & Short Surahs
 • Fee: ₹${fee}
 • ${paymentStatus}${sourceLine}
 ----------------------------------------

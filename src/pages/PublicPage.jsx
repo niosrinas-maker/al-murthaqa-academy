@@ -44,16 +44,19 @@ export default function PublicPage() {
 
             <dl className="mt-8 divide-y divide-emerald-900/10 rounded-2xl border border-emerald-900/10 bg-white shadow-sm overflow-hidden">
               {[
-                ["Course Fee / ഫീസ്", `₹${CONFIG.FEE_RUPEES} (ഒരു വർഷത്തേക്ക്)`],
-                ["Duration / കാലാവധി", "One Year (ഒരു വർഷം)"],
+                ["Course Fee / ഫീസ്", `₹${CONFIG.FEE_RUPEES} (2 മാസത്തേക്ക്)`],
+                ["Duration / കാലാവധി", "2 Months (2 മാസം)"],
+                ["Syllabus / സിലബസ്", "ഫാത്തിഹയും ചെറിയ സൂറത്തുകളും"],
+                ["Learning Outcome / ലക്ഷ്യം", "പൂർണ്ണ തഹ്ഖീഖും അർത്ഥ പഠനവും"],
+                ["Mentoring / മെന്ററിങ്", "Dedicated Mentoring (കൃത്യമായ മെന്ററിങ്)"],
                 ["Mode / രീതി", "Online (സൗകര്യപ്രദമായ സമയം)"],
-                ["Classes / ക്ലാസുകൾ", "Weekly Recorded Videos"],
+                ["Classes / ക്ലാസുകൾ", "Recorded Video Lessons"],
                 ["Correction / തിരുത്തൽ", "Personal Mentor Audio Feedback"],
                 ["Batches / ബാച്ചുകൾ", "Separate Male & Female Batches"],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between items-center px-5 py-3.5 text-sm">
                   <dt className="text-ink/70 font-medium">{k}</dt>
-                  <dd className="font-bold text-emerald-950">{v}</dd>
+                  <dd className="font-bold text-emerald-950 text-right">{v}</dd>
                 </div>
               ))}
             </dl>

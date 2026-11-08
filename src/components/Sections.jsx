@@ -55,7 +55,7 @@ export function About() {
                   المرتقى
                 </span>
                 <span className="rounded-full bg-gold-400/20 px-3 py-1 text-xs font-semibold text-gold-300">
-                  1-Year Systematic Course
+                  2-Month Systematic Course
                 </span>
               </div>
 
@@ -71,11 +71,15 @@ export function About() {
               <ul className="space-y-3 text-sm text-emerald-100/90">
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-300" />
-                  <span>100% Online &amp; Flexible Learning</span>
+                  <span>ഫാത്തിഹയും ചെറിയ സൂറത്തുകളും — അർത്ഥവും തഹ്ഖീഖും</span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-300" />
-                  <span>Dedicated Personal Mentor for Every Student</span>
+                  <span>Dedicated Mentoring (കൃത്യമായ മെന്ററിങ്)</span>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-300" />
+                  <span>100% Online &amp; Flexible Learning (2 Months)</span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-300" />
@@ -90,30 +94,30 @@ export function About() {
         <div className="lg:col-span-7 space-y-6">
           <div className="rounded-3xl border border-emerald-900/10 bg-white p-8 shadow-xl shadow-emerald-900/5 sm:p-10">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-emerald-950 leading-snug">
-              സൂറത്തുകളുടെ ഉച്ചാരണവും തജ്വീദും മെച്ചപ്പെടുത്താൻ സമഗ്രമായ അവസരം
+              ഫാത്തിഹയുടെയും ചെറിയ സൂറത്തുകളുടെയും അർത്ഥം മനസ്സിലാക്കി, പൂർണ്ണ തഹ്ഖീഖോടെയുള്ള പാരായണ പഠനം.
             </h3>
 
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink/80">
-              Quran Tilawah Programme ഒരു വർഷം നീണ്ടുനിൽക്കുന്ന ക്രമബദ്ധമായ ഖുർആൻ പാരായണ പരിശീലനപദ്ധതിയാണ്. ഖുർആൻ പാരായണം കൂടുതൽ കൃത്യമായി പഠിക്കാനും സാധാരണ പാരായണം ചെയ്യുന്ന സൂറത്തുകളുടെ ഉച്ചാരണവും തജ്വീദും മെച്ചപ്പെടുത്താനും ആഗ്രഹിക്കുന്ന പൊതുജനങ്ങൾക്കായാണ് ഈ കോഴ്സ് രൂപകൽപ്പന ചെയ്തിരിക്കുന്നത്. വിദ്യാർഥികൾ Recorded Video Lessons കാണുകയും നിശ്ചയിച്ച Mentor-ന് പാരായണം ഓതി കേൾപ്പിക്കുകയും ചെയ്യുന്നു. Mentor ആവശ്യമായ correction നൽകുകയും പഠനപുരോഗതി നിരീക്ഷിക്കുകയും ചെയ്യുന്നു.
+              Al Murthaqa Quran Academy അവതരിപ്പിക്കുന്ന Quran Tilawah Programme 2 മാസം (2 Months) നീണ്ടുനിൽക്കുന്ന ക്രമബദ്ധമായ ഖുർആൻ പാരായണ പരിശീലനപദ്ധതിയാണ്. ഫാത്തിഹയുടെയും ചെറിയ സൂറത്തുകളുടെയും അർത്ഥം മനസ്സിലാക്കി, പൂർണ്ണ തഹ്ഖീഖോടെയുള്ള പാരായണ പഠനമാണ് ഈ കോഴ്സിലൂടെ ലക്ഷ്യമിടുന്നത്. നിത്യജീവിതത്തിലും നിസ്കാരങ്ങളിലും നാം പതിവായി ഓതുന്ന സൂറത്തുകളുടെ കൃത്യമായ ഉച്ചാരണവും തജ്‌വീദ് നിയമങ്ങളും അർത്ഥസാരവും ഗ്രഹിക്കാൻ ആഗ്രഹിക്കുന്ന പൊതുജനങ്ങൾക്കായാണ് ഈ കോഴ്സ് രൂപകൽപ്പന ചെയ്തിരിക്കുന്നത്. വിദ്യാർത്ഥികൾ Recorded Video Lessons കാണുകയും നിശ്ചയിച്ച Mentor-ന് പാരായണം ഓതി കേൾപ്പിക്കുകയും ചെയ്യുന്നു. Dedicated Mentoring (കൃത്യമായ മെന്ററിങ്) ഉറപ്പുവരുത്തി വ്യക്തിഗതമായി ആവശ്യമായ തിരുത്തലുകൾ നൽകുകയും പഠനപുരോഗതി നിരന്തരം വിലയിരുത്തുകയും ചെയ്യുന്നു.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-emerald-900/10">
               <div className="rounded-xl bg-emerald-50/70 p-4 text-center border border-emerald-900/10">
                 <Clock className="h-6 w-6 text-emerald-800 mx-auto mb-2" />
-                <h4 className="font-bold text-emerald-950 text-sm">One Year</h4>
-                <p className="text-xs text-ink/70 mt-0.5">ക്രമബദ്ധമായ പഠനം</p>
+                <h4 className="font-bold text-emerald-950 text-sm">2 Months</h4>
+                <p className="text-xs text-ink/70 mt-0.5">2 മാസം · ക്രമബദ്ധമായ പഠനം</p>
               </div>
 
               <div className="rounded-xl bg-gold-300/15 p-4 text-center border border-gold-500/20">
                 <Headphones className="h-6 w-6 text-gold-600 mx-auto mb-2" />
-                <h4 className="font-bold text-emerald-950 text-sm">Personal Mentor</h4>
-                <p className="text-xs text-ink/70 mt-0.5">ഓഡിയോ തിരുത്തലുകൾ</p>
+                <h4 className="font-bold text-emerald-950 text-sm">Dedicated Mentoring</h4>
+                <p className="text-xs text-ink/70 mt-0.5">കൃത്യമായ മെന്ററിങ്</p>
               </div>
 
               <div className="rounded-xl bg-emerald-50/70 p-4 text-center border border-emerald-900/10">
-                <Globe className="h-6 w-6 text-emerald-800 mx-auto mb-2" />
-                <h4 className="font-bold text-emerald-950 text-sm">Flexible Online</h4>
-                <p className="text-xs text-ink/70 mt-0.5">സൗകര്യപ്രദമായ സമയം</p>
+                <BookOpen className="h-6 w-6 text-emerald-800 mx-auto mb-2" />
+                <h4 className="font-bold text-emerald-950 text-sm">തഹ്ഖീഖും അർത്ഥവും</h4>
+                <p className="text-xs text-ink/70 mt-0.5">ഫാത്തിഹ &amp; ചെറു സൂറത്തുകൾ</p>
               </div>
             </div>
           </div>
@@ -135,51 +139,51 @@ const HIGHLIGHTS = [
   },
   {
     num: "02",
-    title: "Surah Yaseen",
-    desc: "ഖൽബുൽ ഖുർആൻ — ഓരോ ആയത്തുകളുടെയും നിർത്തുസ്ഥാനങ്ങളും തജ്‌വീദും മനസ്സിരുത്തി പരിശീലിക്കുന്നു.",
-    icon: Heart,
-  },
-  {
-    num: "03",
-    title: "Surah Ar-Rahman",
-    desc: "ദിവ്യകാരുണ്യത്തിന്റെ സൂറത്ത് — മനോഹരമായ പാരായണ ശൈലിയും ശരിയായ ഉച്ചാരണവും സ്വായത്തമാക്കാം.",
-    icon: Sun,
-  },
-  {
-    num: "04",
-    title: "Surah Al-Waqi'ah",
-    desc: "അനുഗ്രഹീത സൂറത്ത് — നിത്യജീവിതത്തിൽ സാധാരണ തെറ്റുകളില്ലാതെ തുടർച്ചയായി ഓതാൻ സഹായിക്കുന്നു.",
-    icon: Layers,
-  },
-  {
-    num: "05",
-    title: "Surah Al-Mulk",
-    desc: "ഖബ്റിലെ കാവൽ — കൃത്യമായ വഖ്ഫുകളും അക്ഷരസ്ഫുടതയും പാലിച്ച് പാരായണം അഭ്യസിക്കുന്നു.",
-    icon: ShieldCheck,
-  },
-  {
-    num: "06",
-    title: "Selected Short Surahs",
+    title: "Short Surahs",
     desc: "നിസ്കാരങ്ങളിൽ പതിവായി ഓതുന്ന ജുസ്ഉ അമ്മയിലെ പ്രധാന ചെറു സൂറത്തുകൾ കൃത്യതയോടെ പഠിക്കുന്നു.",
     icon: BookmarkCheck,
   },
   {
-    num: "07",
+    num: "03",
+    title: "സൂറത്തുകളുടെ അർത്ഥം",
+    desc: "ഫാത്തിഹയുടെയും ചെറിയ സൂറത്തുകളുടെയും ലളിതമായ അർത്ഥം മനസ്സിലാക്കി ഈമാനിക ഉണർവോടെയുള്ള പഠനം.",
+    icon: Heart,
+  },
+  {
+    num: "04",
+    title: "പൂർണ്ണ തഹ്ഖീഖ് പാരായണം",
+    desc: "ഓരോ അക്ഷരവും സൂക്ഷ്മമായി ഉച്ചരിച്ച്, മഖ്‌റജും സിഫാത്തുകളും കൃത്യമായി പാലിച്ച് സാവധാനത്തിലുള്ള പാരായണം.",
+    icon: Sun,
+  },
+  {
+    num: "05",
+    title: "Dedicated Mentoring",
+    desc: "കൃത്യമായ മെന്ററിങ് — ഓരോ വിദ്യാർത്ഥിക്കും നിശ്ചയിക്കപ്പെട്ട വ്യക്തിഗത മെന്ററുടെ തുടർച്ചയായ മേൽനോട്ടവും തിരുത്തലുകളും.",
+    icon: UserCheck,
+  },
+  {
+    num: "06",
     title: "Essential Tajweed",
     desc: "നൂൻ സാകിന, മീം സാകിന, മദ്ദ്, ഖൽഖല, ഗുന്ന തുടങ്ങി അവശ്യം അറിഞ്ഞിരിക്കേണ്ട എല്ലാ നിയമങ്ങളും.",
     icon: Volume2,
   },
   {
-    num: "08",
+    num: "07",
     title: "Recorded Video Classes",
     desc: "ഏത് തിരക്കിലും സ്വന്തം സൗകര്യപ്രദമായ സമയത്ത് എത്ര തവണയും റിവൈസ് ചെയ്ത് കണ്ടുപഠിക്കാം.",
     icon: Video,
   },
   {
+    num: "08",
+    title: "Personal Audio Feedback",
+    desc: "ഓതി കേൾപ്പിക്കുന്ന ഓരോ ഭാഗവും മെന്റർ ശ്രദ്ധിച്ച് കേട്ട് ശബ്ദസന്ദേശത്തിലൂടെ വ്യക്തിഗതമായി തിരുത്തുന്നു.",
+    icon: Headphones,
+  },
+  {
     num: "09",
-    title: "Personal Mentor Correction",
-    desc: "ഓതി കേൾപ്പിക്കുന്ന ഓരോ ഭാഗവും വ്യക്തിഗത മെന്റർ ശ്രദ്ധിച്ച് കേട്ട് ശബ്ദസന്ദേശത്തിലൂടെ തിരുത്തുന്നു.",
-    icon: UserCheck,
+    title: "2 Months Duration",
+    desc: "2 മാസം കൊണ്ട് ഫാത്തിഹയും ചെറു സൂറത്തുകളും തികഞ്ഞ കൃത്യതയോടെ ഓതാൻ പ്രാപ്തരാക്കുന്ന ചിട്ടയായ സിലബസ്.",
+    icon: Clock,
   },
   {
     num: "10",
@@ -201,7 +205,7 @@ export function CourseHighlights() {
             Course Highlights
           </h2>
           <p className="mt-2 text-base sm:text-lg text-ink/75">
-            ഖുർആൻ തിലാവത്ത് പ്രോഗ്രാമിലൂടെ നിങ്ങൾ കൈവരിക്കുന്ന 10 പ്രധാന സവിശേഷതകൾ
+            ഫാത്തിഹയും ചെറിയ സൂറത്തുകളും അർത്ഥമറിഞ്ഞ് പൂർണ്ണ തഹ്ഖീഖോടെ പഠിക്കുന്നതിനുള്ള 10 പ്രധാന സവിശേഷതകൾ
           </p>
           <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-gold-300 via-gold-500 to-gold-400" />
         </div>
@@ -255,15 +259,15 @@ const TIMELINE_STEPS = [
   {
     step: "Step 1",
     en: "Watch",
-    ml: "Weekly Recorded Class കാണുക",
-    desc: "ആഴ്ചതോറുമുള്ള പുതിയ റെക്കോർഡഡ് വീഡിയോ ക്ലാസ് നിങ്ങളുടെ സൗകര്യപ്രദമായ സമയത്ത് ശ്രദ്ധാപൂർവ്വം കാണുക.",
+    ml: "Recorded Class കാണുക",
+    desc: "ഫാത്തിഹയുടെയും ചെറു സൂറത്തുകളുടെയും തജ്‌വീദും അർത്ഥവും വിശദീകരിക്കുന്ന റെക്കോർഡഡ് ക്ലാസ് നിങ്ങളുടെ സൗകര്യപ്രദമായ സമയത്ത് കാണുക.",
     icon: Video,
   },
   {
     step: "Step 2",
     en: "Practice",
-    ml: "പഠിച്ച ഭാഗം പരിശീലിക്കുക",
-    desc: "ക്ലാസിൽ വിശദീകരിച്ച തജ്‌വീദ് നിയമങ്ങളും ഉച്ചാരണ ശൈലിയും സ്വയം ആവർത്തിച്ചു പാരായണം ചെയ്ത് പരിശീലിക്കുക.",
+    ml: "തഹ്ഖീഖോടെ പരിശീലിക്കുക",
+    desc: "ക്ലാസിൽ വിശദീകരിച്ച തഹ്ഖീഖ് നിയമങ്ങളും അർത്ഥസാരവും മനസ്സിലാക്കി സ്വയം ആവർത്തിച്ചു പാരായണം ചെയ്ത് പരിശീലിക്കുക.",
     icon: BookOpen,
   },
   {
@@ -276,15 +280,15 @@ const TIMELINE_STEPS = [
   {
     step: "Step 4",
     en: "Correct",
-    ml: "Mentor-ന്റെ feedback അനുസരിച്ച് തെറ്റുകൾ തിരുത്തുക",
-    desc: "മെന്റർ നൽകുന്ന വിശദമായ വോയ്‌സ് ഫീഡ്‌ബാക്ക് കേട്ട് പാരായണത്തിലെ സൂക്ഷ്മമായ തെറ്റുകൾ കൃത്യമായി തിരുത്തുക.",
+    ml: "Dedicated Mentoring വഴി തിരുത്തുക",
+    desc: "മെന്റർ നൽകുന്ന കൃത്യമായ വോയ്‌സ് ഫീഡ്‌ബാക്ക് കേട്ട് പാരായണത്തിലെ സൂക്ഷ്മമായ തെറ്റുകൾ കൃത്യമായി തിരുത്തുക.",
     icon: CheckCircle2,
   },
   {
     step: "Step 5",
     en: "Progress",
-    ml: "പഠനപുരോഗതി രേഖപ്പെടുത്തി അടുത്ത പാഠത്തിലേക്ക് മുന്നേറുക",
-    desc: "ശരിയായ പാരായണം പൂർത്തിയാക്കി മെന്ററുടെ അംഗീകാരം നേടി അടുത്ത സിലബസ് പാഠത്തിലേക്ക് ആത്മവിശ്വാസത്തോടെ മുന്നേറുക.",
+    ml: "പഠനപുരോഗതി നേടി അടുത്ത സൂറത്തിലേക്ക്",
+    desc: "പൂർണ്ണ തഹ്ഖീഖോടെയുള്ള പാരായണം ഉറപ്പുവരുത്തി മെന്ററുടെ അംഗീകാരത്തോടെ അടുത്ത സൂറത്തിലേക്ക് ആത്മവിശ്വാസത്തോടെ മുന്നേറുക.",
     icon: TrendingUp,
   },
 ];
@@ -361,11 +365,13 @@ export function LearningMethod() {
 export function CourseDetailsCard() {
   const details = [
     { label: "Course", value: "Quran Tilawah Programme", icon: GraduationCap },
-    { label: "Duration", value: "One Year", icon: Clock },
+    { label: "Syllabus", value: "ഫാത്തിഹയും ചെറിയ സൂറത്തുകളും", icon: BookOpen },
+    { label: "Duration", value: "2 Months (2 മാസം)", icon: Clock },
+    { label: "Learning Outcome", value: "പൂർണ്ണ തഹ്ഖീഖും അർത്ഥ പഠനവും", icon: Sparkles },
+    { label: "Mentoring", value: "Dedicated Mentoring (കൃത്യമായ മെന്ററിങ്)", icon: UserCheck },
     { label: "Mode", value: "Online (Flexible Timings)", icon: Globe },
-    { label: "Learning Method", value: "Recorded Lessons + Mentor Correction", icon: Headphones },
     { label: "Language", value: "Malayalam", icon: Languages },
-    { label: "Batch", value: "Male Batch & Female Batch", icon: Users },
+    { label: "Batch", value: "Separate Male & Female Batches", icon: Users },
   ];
 
   return (
@@ -385,7 +391,7 @@ export function CourseDetailsCard() {
                 Programme Specifications
               </h2>
               <p className="mt-1 text-sm sm:text-base text-ink/75">
-                ഒരു വർഷത്തെ സമ്പൂർണ്ണ ഖുർആൻ പരിശീലന വിവരങ്ങൾ
+                2 മാസത്തെ സമ്പൂർണ്ണ ഖുർആൻ പരിശീലന വിവരങ്ങൾ
               </p>
             </div>
 
@@ -418,7 +424,7 @@ export function CourseDetailsCard() {
           <div className="lg:col-span-5">
             <div className="pattern-star relative rounded-2xl p-8 text-center text-white shadow-xl ring-2 ring-gold-400/50">
               <span className="inline-block rounded-full bg-gold-400/20 px-4 py-1 text-xs font-bold uppercase tracking-widest text-gold-300">
-                All-Inclusive Annual Fee
+                All-Inclusive Course Fee
               </span>
 
               <p className="mt-4 text-xs font-medium uppercase tracking-wider text-emerald-100/70">
@@ -430,11 +436,11 @@ export function CourseDetailsCard() {
                 <span className="font-display text-5xl sm:text-6xl font-extrabold text-gold-300 drop-shadow-[0_2px_10px_rgba(227,199,126,0.3)]">
                   ₹{CONFIG.FEE_RUPEES}
                 </span>
-                <span className="text-sm font-medium text-emerald-100/80">/ 1 Year</span>
+                <span className="text-sm font-medium text-emerald-100/80">/ 2 Months</span>
               </div>
 
               <p className="text-xs text-emerald-100/80 leading-relaxed max-w-xs mx-auto">
-                ഒരു വർഷത്തെ സമ്പൂർണ്ണ റെക്കോർഡഡ് ക്ലാസുകളും വ്യക്തിഗത മെന്റർ പരിശോധനയും അടക്കം.
+                2 മാസത്തെ സമ്പൂർണ്ണ റെക്കോർഡഡ് ക്ലാസുകളും കൃത്യമായ മെന്ററിങ്ങും (Dedicated Mentoring) വ്യക്തിഗത പരിശോധനയും അടക്കം.
               </p>
 
               {/* CTA Button */}
@@ -472,7 +478,7 @@ export function Footer() {
         </p>
         <div className="pt-2 flex flex-wrap justify-center gap-6 text-xs text-emerald-100/60">
           <span>Fee: ₹{CONFIG.FEE_RUPEES}</span>
-          <span>Duration: 1 Year</span>
+          <span>Duration: 2 Months (2 മാസം)</span>
           <span>Language: Malayalam</span>
           <span>Helpline: +91 7736844171</span>
         </div>
