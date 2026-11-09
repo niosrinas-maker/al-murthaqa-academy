@@ -2,15 +2,16 @@ import { CONFIG } from "../config";
 
 export function buildWhatsAppMessage({
   form,
-  paymentMethod = "upi",
+  paymentMethod = "razorpay",
+  paymentId = "",
   kind = "public",
   source = "Public Website",
 }) {
   const fee = CONFIG.FEE_RUPEES;
-  const isUPI = paymentMethod === "upi";
+  const isRazorpay = paymentMethod === "razorpay";
 
-  const paymentStatus = isUPI
-    ? "Payment Status: Direct UPI Transfer"
+  const paymentStatus = isRazorpay
+    ? `Payment Status: Paid Online (Razorpay)\n• Razorpay Payment ID: ${paymentId || "Verified"}`
     : "Payment Status: Paid Cash Directly";
 
   const sourceLine =

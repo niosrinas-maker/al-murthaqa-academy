@@ -39,7 +39,7 @@ export default function PublicPage() {
               Register for the Programme
             </h2>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-ink/75">
-              വിവരങ്ങൾ പൂരിപ്പിച്ച് Direct UPI (GPay/PhonePe) വഴിയോ നേരിട്ടോ (Cash) ഫീസ് അടച്ച് രജിസ്ട്രേഷൻ പൂർത്തിയാക്കുക. തുടർന്ന് അഡ്മിഷൻ സ്ഥിരീകരണത്തിനായി വാട്സ്ആപ്പിലേക്ക് റീഡയറക്ട് ചെയ്യപ്പെടും.
+              വിവരങ്ങൾ പൂരിപ്പിച്ച് Razorpay (UPI, GPay, PhonePe, Cards, NetBanking) വഴി സുരക്ഷിതമായി ഫീസ് അടച്ച് രജിസ്ട്രേഷൻ പൂർത്തിയാക്കുക. തുടർന്ന് അഡ്മിഷൻ സ്ഥിരീകരണത്തിനായി വാട്സ്ആപ്പിലേക്ക് റീഡയറക്ട് ചെയ്യപ്പെടും.
             </p>
 
             <dl className="mt-8 divide-y divide-emerald-900/10 rounded-2xl border border-emerald-900/10 bg-white shadow-sm overflow-hidden">

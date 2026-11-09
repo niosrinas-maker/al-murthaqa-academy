@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CONFIG } from "../config";
 import {
   BookOpen,
@@ -454,7 +455,7 @@ export function CourseDetailsCard() {
 
               <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-emerald-100/70">
                 <CheckCircle2 className="h-3.5 w-3.5 text-gold-400" />
-                <span>Direct UPI (GPay/PhonePe) &amp; Cash Payment Available</span>
+                <span>Secure Online Payment via Razorpay (UPI, GPay, Cards, NetBanking)</span>
               </div>
             </div>
           </div>
@@ -469,20 +470,55 @@ export function CourseDetailsCard() {
 // ============================================================
 export function Footer() {
   return (
-    <footer className="bg-emerald-950 py-12 text-center text-sm text-emerald-100/70 border-t border-gold-500/20">
-      <div className="mx-auto max-w-6xl px-5 space-y-4">
-        <p className="font-arabic text-3xl text-gold-300">المرتقى</p>
-        <p className="font-display font-bold text-white text-lg">Al Murthaqa Quran Academy</p>
-        <p className="text-sm max-w-md mx-auto text-emerald-100/80">
-          Quran Tilawah Programme · Towards Pure Recitation, Through Systematic Learning
-        </p>
-        <div className="pt-2 flex flex-wrap justify-center gap-6 text-xs text-emerald-100/60">
-          <span>Fee: ₹{CONFIG.FEE_RUPEES}</span>
-          <span>Duration: 2 Months (2 മാസം)</span>
-          <span>Language: Malayalam</span>
-          <span>Helpline: +91 7736844171</span>
+    <footer className="pattern-star bg-emerald-950 py-14 text-center text-sm text-emerald-100/75 border-t border-gold-500/20">
+      <div className="mx-auto max-w-6xl px-5 space-y-6">
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-400 font-arabic text-xl text-gold-300">
+            م
+          </span>
+          <p className="font-arabic text-3xl text-gold-300">المرتقى</p>
+          <p className="font-display font-bold text-white text-lg sm:text-xl">Al Murthaqa Quran Academy</p>
+          <p className="text-xs sm:text-sm max-w-md mx-auto text-emerald-100/80 leading-relaxed">
+            Quran Tilawah Programme · Towards Pure Recitation, Through Systematic Learning
+          </p>
         </div>
-        <p className="pt-4 text-xs text-emerald-100/40">
+
+        {/* Quick Programme Meta Info */}
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs text-emerald-100/70 pt-2 border-t border-emerald-900/60 max-w-2xl mx-auto">
+          <span>Fee: ₹{CONFIG.FEE_RUPEES}</span>
+          <span className="hidden sm:inline text-gold-500/50">•</span>
+          <span>Duration: 2 Months (2 മാസം)</span>
+          <span className="hidden sm:inline text-gold-500/50">•</span>
+          <span>Language: Malayalam</span>
+          <span className="hidden sm:inline text-gold-500/50">•</span>
+          <span>Helpline: +91 {CONFIG.ADMIN_PHONE || "7736844171"}</span>
+        </div>
+
+        {/* Legal & Compliance Links for Razorpay Approval */}
+        <div className="pt-2 pb-1 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs font-medium">
+          <Link
+            to="/privacy-policy"
+            className="text-gold-300/90 hover:text-white underline underline-offset-4 transition-colors"
+          >
+            Privacy Policy (സ്വകാര്യതാ നയം)
+          </Link>
+          <span className="text-gold-500/40">•</span>
+          <Link
+            to="/terms-and-conditions"
+            className="text-gold-300/90 hover:text-white underline underline-offset-4 transition-colors"
+          >
+            Terms &amp; Conditions (നിബന്ധനകൾ)
+          </Link>
+          <span className="text-gold-500/40">•</span>
+          <Link
+            to="/terms-and-conditions"
+            className="text-gold-300/90 hover:text-white underline underline-offset-4 transition-colors"
+          >
+            Cancellation &amp; Refund Policy
+          </Link>
+        </div>
+
+        <p className="pt-2 text-xs text-emerald-100/40">
           © {new Date().getFullYear()} Al Murthaqa Quran Academy. All rights reserved.
         </p>
       </div>

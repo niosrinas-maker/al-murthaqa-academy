@@ -25,6 +25,12 @@ function loadRazorpayScript() {
  * Rejects   -> Error with message "DISMISSED" or the failure description
  */
 export async function payWithRazorpay({ name, phone }) {
+  if (!CONFIG.RAZORPAY_KEY_ID || CONFIG.RAZORPAY_KEY_ID.includes("YOUR_KEY_ID_HERE")) {
+    throw new Error(
+      "Razorpay Key ID is not configured. Please add your VITE_RAZORPAY_KEY_ID into the .env file or src/config.js."
+    );
+  }
+
   const loaded = await loadRazorpayScript();
   if (!loaded) throw new Error("Could not load Razorpay. Check your internet connection and try again.");
 
